@@ -1,13 +1,11 @@
 var planetas = ["Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"]
 function verficarExistencia() {
-    var verificacao = true 
-    while (verificacao) {
-         const planets = prompt("Digite o nome do Planeta: ")
-         if (planets && planets.toUpperCase() == planetas){
-        planetas.push(planets)
+         const planets = prompt("Digite o nome do Planeta: ").toLowerCase();
+         if (planetas.includes( planets[0].toUpperCase() )){
+
+             alert(`${planetas} já existe na lista`)
         } else {
-            verificacao = false
+            planetas.push(planets)
         }
 }
-}
-document.getElementById("demo").innerHTML = planets
+verficarExistencia()
